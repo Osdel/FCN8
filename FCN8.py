@@ -162,5 +162,3 @@ def build_model(w,h,num_classes, dropout=.5, l2_reg=0.,conv_type='ds'):
 
 	fcn8 = Model(inputs=X, outputs=classifier, name = 'FCN8')
 	return fcn8
-
-build_model(256,256,2,conv_type = 'conv')
