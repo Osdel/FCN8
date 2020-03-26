@@ -40,4 +40,8 @@ This paper builds upon the fully convolutional layer and modifies it to work on 
 ### MobileNet-Unet
 We provide the MobileNet-V2 U-Net version, where a MobileNet-V2 network is used as Encoder and the [Pix2Pix](https://www.tensorflow.org/tutorials/generative/pix2pix) Upsample is used as Decoder. This model was obtained and adapted from Tensorflow Documentation, for more information follow [this](https://www.tensorflow.org/tutorials/images/segmentation) link.
 
-To build mobilenet-unet model
+To build mobilenet-unet model:
+```
+from unet_mobilenet import unet_model
+mobilenet_unet = unet_model(num_classes,height,width)
+```
