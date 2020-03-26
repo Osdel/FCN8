@@ -86,7 +86,7 @@ def score_block(inputs,conv_type,num_classes,name,l2_reg=0.):
 	"""
 	#He initialization
 	if name=='score32':
-		in_channels = inputs.shape[-1]
+		in_channels = inputs.get_shape().as_list()[-1]
 		stddev = (2/in_channels)**.5
 	elif name=='score16':
 		stddev = 0.01
