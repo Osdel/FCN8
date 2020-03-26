@@ -152,7 +152,7 @@ def build_model(w,h,num_classes, dropout=.5, l2_reg=0.,conv_type='ds'):
 	upscore32c = crop(score16,name='upscore32c')(upscore32)
 	fuse1 = Add(name='fuse1')([score16, upscore32c])
 
-	upscore16 = upsample_block(fuse1,num_classes,4,2,name='upscore32',l2_reg=l2_reg)
+	upscore16 = upsample_block(fuse1,num_classes,4,2,name='upscore16',l2_reg=l2_reg)
 	upscore16c = crop(score8,name='upscore16c')(upscore16)
 	fuse2 = Add(name='fuse2')([upscore16c, score8])
 
