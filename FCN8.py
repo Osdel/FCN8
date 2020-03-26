@@ -86,7 +86,7 @@ def score_block(inputs,conv_type,num_classes,name,l2_reg=0.):
 	"""
 	#He initialization
 	if name=='score32':
-		in_channels = inputs.shape[-1].value
+		in_channels = inputs.shape[-1]
 		stddev = (2/in_channels)**.5
 	elif name=='score16':
 		stddev = 0.01
@@ -105,8 +105,8 @@ def score_block(inputs,conv_type,num_classes,name,l2_reg=0.):
 
 def crop(target_layer,name):
 	def wrapper(input):
-		h,w = input.get_shape()[1].value,input.get_shape()[2].value
-		target_h, target_w = target_layer.get_shape()[1].value,target_layer.get_shape()[2].value
+		h,w = input.get_shape()[1],input.get_shape()[2]
+		target_h, target_w = target_layer.get_shape()[1],target_layer.get_shape()[2]
 		off_h = h-target_h
 		off_w = w-target_w
 		offsets = ((off_h//2,ceil(off_h/2)),(off_w//2,ceil(off_w/2)))
@@ -162,3 +162,5 @@ def build_model(w,h,num_classes, dropout=.5, l2_reg=0.,conv_type='ds'):
 
 	fcn8 = Model(inputs=X, outputs=classifier, name = 'FCN8')
 	return fcn8
+
+build_model(256,256,2,conv_type = 'conv')
