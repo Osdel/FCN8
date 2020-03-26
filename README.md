@@ -8,8 +8,16 @@ Fully Convolutional Network (https://arxiv.org/abs/1605.06211) was released in 2
 
 You can find the original implementation at https://github.com/shelhamer/fcn.berkeleyvision.org, but it uses Caffe.
 
+### Our Implementation
+Our implementation uses a VGG16 network as Encoder. The main differences with the author's implementation are:
+* We use of BatchNormalization by default (but it can be disabled)
+* We don't use double learning rate for biases
+* We use l2 regularization instead of weight decay
+* We have support for depthwise separable convolutions
+
 ## Depthwise Separable FCN8 (FastFCN8)
-This FCN8 implementation include support for Depthwise separable convolution which allows the model to run faster and reduce drastically the memory usage without losing performance accuracy.
+Inspired by the recent success of Depthwise Separable Convolution we build the FastFCN8 model. Please, this FastFCN8 model IS NOT the model refered in this [paper](https://paperswithcode.com/paper/fastfcn-rethinking-dilated-convolution-in-the)
+This FCN8 implementation include support for Depthwise separable convolution which allows the model to run faster and reduce drastically the memory usage without losing performance accuracy. The FastFCN8 model reduce the number of trainable parameters of the FCN8 from 134.278.854 to 20.607.073. The performance of the model is tested in the example notebooks provided.
 
 To use standard FCN8 or FastFCN8 build the model changing the conv_type parameter from 'conv' to 'ds' respectively.
 
