@@ -92,7 +92,8 @@ def score_block(inputs,conv_type,num_classes,name,l2_reg=0.):
 		stddev = 0.01
 	elif name=='score8':
 		stddev = .001
-	w_initializer = TruncatedNormal(stddev=stddev)
+	#w_initializer = TruncatedNormal(stddev=stddev)
+	w_initializer = tf.keras.initializers.he_normal()
 	b_initializer = Zeros()
 	if conv_type=='ds':
 		x = SeparableConv2D(num_classes, 1, padding='same', strides=1, name=name, depthwise_initializer=w_initializer,\
@@ -105,8 +106,10 @@ def score_block(inputs,conv_type,num_classes,name,l2_reg=0.):
 
 def crop(target_layer,name):
 	def wrapper(input):
-		h,w = input.get_shape()[1],input.get_shape()[2]
-		target_h, target_w = target_layer.get_shape()[1],target_layer.get_shape()[2]
+		input_shape = input.get_shape().as_list()
+		target_shape = target_layer.get_shape().as_list()
+		h,w = input_shape[1],input_shape[2]
+		target_h, target_w = target_shape[1],target_shape[2]
 		off_h = h-target_h
 		off_w = w-target_w
 		offsets = ((off_h//2,ceil(off_h/2)),(off_w//2,ceil(off_w/2)))
@@ -162,3 +165,5 @@ def build_model(w,h,num_classes, dropout=.5, l2_reg=0.,conv_type='ds'):
 
 	fcn8 = Model(inputs=X, outputs=classifier, name = 'FCN8')
 	return fcn8
+
+build_model(512,512,2,conv_type='conv')
