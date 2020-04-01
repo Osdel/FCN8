@@ -69,5 +69,3 @@ def build_fc_densenet(n_classes,h,w,n_layers=201,use_bottleneck=False,bottleneck
   model = Model(inputs=inputs,outputs=x)
   return model
 
-m = build_fc_densenet(2,224,224,n_layers=121,use_bottleneck=False,bottleneck_blocks=32)
-m.summary()
