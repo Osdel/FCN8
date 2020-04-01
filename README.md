@@ -1,9 +1,14 @@
-# Semantic Segmentation Nets (SSNeT)
+# Semantic Segmentation Nets (SSNeTs)
 Semantic Segmentation is the process of taking an image and label every single pixel to it's corresponding class. We can think of semantic segmentation as image classification at a pixel level. For example, in an image that has many cars, segmentation will label all the objects as car objects. However, a separate class of models known as instance segmentation is able to label the separate instances where an object appears in an image.
 
 ![](https://www.jeremyjordan.me/content/images/2018/05/Screen-Shot-2018-05-17-at-7.42.16-PM.png)
 
 In this project you will find some implementation and examples of Deep Learning Models for Semantic Segmentation.
+The following models are avaliable:
+* FCN8
+* Depthwise Separable FCN8 or FastFCN8
+* MobileNetV2-Unet
+* FC-Densenet
 
 ## FCN8
 ![](https://miro.medium.com/max/790/1*wRkj6lsQ5ckExB5BoYkrZg.png)
@@ -45,3 +50,25 @@ To build mobilenet-unet model:
 from unet_mobilenet import unet_model
 mobilenet_unet = unet_model(num_classes,height,width)
 ```
+## FC-Densenet
+![](https://miro.medium.com/max/1400/1*UOPR3UPTJsJz-b4t8WYTew.png)
+
+This architecture was published in 2016 as [Fully Convolutional DenseNets for Semantic Segmentation](https://arxiv.org/pdf/1611.09326.pdf). Extending the DenseNet architecture to fully convolutional networks for use in semantic segmentation.
+
+Recently, Densely Connected Convolutional Networks (DenseNets), has shown excellent
+results on image classification tasks. The idea of DenseNets is based on the observation that if each layer is directly connected to every other layer in a feed-forward fashion then the network will be more accurate and easier to train.
+
+The authors achieve state-of-the-art results on urban scene benchmark datasets such as CamVid and Gatech, without any further post-processing module nor pretraining. Moreover, due to smart construction of the model, their approach have much less parameters than
+currently published best entries for these datasets. 
+
+![](https://miro.medium.com/max/448/1*5Bqcgzl6JDXrScL1RXd6Ag.png)
+![](https://miro.medium.com/max/1400/1*1Pj56mTHPNha8Pg58fWJEQ.png)
+
+Our implementation **IS NOT** exactly the implementation of the paper. They use a different Densenet backbone. As Keras provide 121, 169 and 201 Densenet models we change slighly the way the architecture works.
+
+This implementation supports all 3 Keras Densenet models. To build them:
+```python
+from fc_densenet import build_fc_densenet
+fc_densenet = build_fc_densenet(n_classes,h,w,n_layers=201,use_bottleneck=False,bottleneck_blocks=32)
+```
+Change the *n_layers* paremeters to change the Densenet backbone model.
