@@ -4,6 +4,11 @@ Semantic Segmentation is the process of taking an image and label every single p
 ![](https://www.jeremyjordan.me/content/images/2018/05/Screen-Shot-2018-05-17-at-7.42.16-PM.png)
 
 In this project you will find some implementation and examples of Deep Learning Models for Semantic Segmentation.
+The following models are avaliable:
+* FCN8
+* Depthwise Separable FCN8 or FastFCN8
+* MobileNetV2-Unet
+* FC-Densenet
 
 ## FCN8
 ![](https://miro.medium.com/max/790/1*wRkj6lsQ5ckExB5BoYkrZg.png)
