@@ -46,7 +46,7 @@ def build_fc_densenet(n_classes,h,w,n_layers=201,use_bottleneck=False,bottleneck
   base = Model(inputs=base_model.inputs,outputs=skip_layers)
 
   
-  inputs = Input(shape=[512, 512, 3])
+  inputs = Input(shape=[h, w, 3])
   skips = base(inputs)
 
   x = skips[-1]
