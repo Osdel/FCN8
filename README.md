@@ -72,3 +72,7 @@ from fc_densenet import build_fc_densenet
 fc_densenet = build_fc_densenet(n_classes,h,w,n_layers=201,use_bottleneck=False,bottleneck_blocks=32)
 ```
 Change the *n_layers* paremeters to change the Densenet backbone model.
+
+# Examples and Tutorials
+The following notebooks will help you to build these models and apply them to your datasets:
+* [Iris Segmentation Tutorial](https://github.com/Osdel/ssnets/blob/master/Iris_Segmentation_Tutorial.ipynb)
