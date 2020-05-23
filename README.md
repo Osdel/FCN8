@@ -26,7 +26,7 @@ Our implementation uses a VGG16 network as Encoder. The main differences with th
 
 ## Depthwise Separable FCN8 (FastFCN8)
 Inspired by the recent success of Depthwise Separable Convolution we built the FastFCN8 model. Please, this FastFCN8 model IS NOT the model refered in this [paper](https://paperswithcode.com/paper/fastfcn-rethinking-dilated-convolution-in-the)
-This FCN8 implementation include support for Depthwise Separable Convolution which allows the model to run faster and reduce drastically the memory usage from 124M to 20M without losing performance accuracy. The model's performance is tested in the example notebooks provided, click [here]() for more details.
+This FCN8 implementation include support for Depthwise Separable Convolution which allows the model to run faster and reduce drastically the memory usage from 124M to 20M without losing performance accuracy. The model's performance is tested in the example notebooks provided.
 
 To use standard FCN8 or FastFCN8 build the model changing the conv_type parameter from 'conv' to 'ds' respectively.
 
