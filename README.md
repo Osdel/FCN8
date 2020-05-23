@@ -64,7 +64,7 @@ currently published best entries for these datasets.
 ![](https://miro.medium.com/max/448/1*5Bqcgzl6JDXrScL1RXd6Ag.png)
 ![](https://miro.medium.com/max/1400/1*1Pj56mTHPNha8Pg58fWJEQ.png)
 
-Our implementation **IS NOT** exactly the implementation of the paper. They use a different Densenet backbone. As Keras provide 121, 169 and 201 Densenet models we change slighly the way the architecture works.
+Our implementation **IS NOT** exactly the implementation of the paper. They use a different Densenet backbone. As Keras provide 121, 169 and 201 Densenet models we changed slighly the way the architecture works.
 
 This implementation supports all 3 Keras Densenet models. To build them:
 ```python
