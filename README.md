@@ -1,14 +1,19 @@
-# Semantic Segmentation Nets (SSNeTs)
-Semantic Segmentation is the process of taking an image and label every single pixel to it's corresponding class. We can think of semantic segmentation as image classification at a pixel level. For example, in an image that has many cars, segmentation will label all the objects as car objects. However, a separate class of models known as instance segmentation is able to label the separate instances where an object appears in an image.
-
-![](https://www.jeremyjordan.me/content/images/2018/05/Screen-Shot-2018-05-17-at-7.42.16-PM.png)
-
-In this project you will find some implementation and examples of Deep Learning Models for Semantic Segmentation.
+In this project you will find some implementation and tutorials of Deep Learning Models for Semantic Segmentation.
 The following models are avaliable:
 * FCN8
 * Depthwise Separable FCN8 or FastFCN8
 * MobileNetV2-Unet
 * FC-Densenet
+
+The following tutorials are avaliable:
+* [Iris Segentation](https://github.com/Osdel/ssnets/blob/master/Iris_Segmentation_Tutorial.ipynb)
+
+# Semantic Segmentation Nets (SSNeTs)
+Semantic Segmentation is the process of taking an image and label every single pixel to it's corresponding class. We can think of semantic segmentation as image classification at a pixel level. For example, in an image that has many cars, segmentation will label all the objects as car objects. However, a separate class of models known as instance segmentation is able to label the separate instances where an object appears in an image.
+
+![](https://www.jeremyjordan.me/content/images/2018/05/Screen-Shot-2018-05-17-at-7.42.16-PM.png)
+
+
 
 ## FCN8
 ![](https://miro.medium.com/max/790/1*wRkj6lsQ5ckExB5BoYkrZg.png)
